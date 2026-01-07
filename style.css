@@ -1,18 +1,20 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #fff;
 }
 
 .container {
-    background: white;
-    padding: 20px 25px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
 }
 
 h1 {
@@ -21,33 +23,97 @@ h1 {
 }
 
 label {
-    display: block;
     margin-top: 10px;
+    display: block;
 }
 
 input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    border-radius: 6px;
+    border: none;
 }
 
 button {
     width: 100%;
     margin-top: 15px;
     padding: 10px;
-    cursor: pointer;
     border: none;
-    background-color: #007bff;
+    border-radius: 8px;
+    background: #2196f3;
     color: white;
-    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #1976d2;
 }
 
-#resultado {
-    margin-top: 15px;
-    font-weight: bold;
+/* ===== RANK ===== */
+
+.rank-box {
+    margin-top: 20px;
     text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.5s;
 }
+
+.medalha {
+    font-size: 50px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+/* ===== CORES POR RANK ===== */
+
+.ferro {
+    background: linear-gradient(135deg, #555, #888);
+    box-shadow: 0 0 15px #777;
+}
+.ferro .medalha {
+    color: #b0b0b0;
+}
+
+.prata {
+    background: linear-gradient(135deg, #cfd8dc, #90a4ae);
+    box-shadow: 0 0 20px #b0bec5;
+}
+.prata .medalha {
+    color: #e0e0e0;
+}
+
+.ouro {
+    background: linear-gradient(135deg, #ffca28, #ff8f00);
+    box-shadow: 0 0 25px gold;
+}
+.ouro .medalha {
+    color: gold;
+}
+
+.diamante {
+    background: linear-gradient(135deg, #4fc3f7, #0288d1);
+    box-shadow: 0 0 25px #4fc3f7;
+}
+.diamante .medalha {
+    color: #b3e5fc;
+}
+
+.lendario {
+    background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+    box-shadow: 0 0 30px #ce93d8;
+}
+.lendario .medalha {
+    color: #f3e5f5;
+}
+
+.imortal {
+    background: linear-gradient(135deg, #ff1744, #b71c1c);
+    box-shadow: 0 0 35px #ff5252;
+}
+.imortal .medalha {
+    color: #ffebee;
+}
+

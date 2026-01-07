@@ -21,11 +21,24 @@ function calcularRank(vitorias, derrotas) {
     return `O Herói tem de saldo de **${saldoVitorias}** vitorias está na patente **${nivel}**`;
 }
 
-function mostrarRank(){
-    const vitorias = Number(DocumentTimeline.getElementById("vitorias").value);
-    const derrotas = Number(DocumentTimeline.getElementById("derrotas").value);
+function mostrarRank() {
+    const vitorias = Number(document.getElementById("vitorias").value);
+    const derrotas = Number(document.getElementById("derrotas").value);
 
-    const resultado = calcularRank(vitorias, derrotas);
+    const resultadoTexto = calcularRank(vitorias, derrotas);
 
-    document.getElementById("resultado").innerText = resultado;
+    const resultado = document.getElementById("resultado");
+    const rankBox = document.getElementById("rankBox");
+
+    resultado.innerText = resultadoTexto;
+
+    // Remove classes antigas
+    rankBox.className = "rank-box";
+
+    if (vitorias < 10) rankBox.classList.add("ferro");
+    else if (vitorias <= 20) rankBox.classList.add("prata");
+    else if (vitorias <= 50) rankBox.classList.add("ouro");
+    else if (vitorias <= 80) rankBox.classList.add("diamante");
+    else if (vitorias <= 100) rankBox.classList.add("lendario");
+    else rankBox.classList.add("imortal");
 }
