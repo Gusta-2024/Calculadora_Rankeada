@@ -21,4 +21,11 @@ function calcularRank(vitorias, derrotas) {
     return `O Herói tem de saldo de **${saldoVitorias}** vitorias está na patente **${nivel}**`;
 }
 
-console.log(calcularRank(83, 50))
+function mostrarRank(){
+    const vitorias = Number(DocumentTimeline.getElementById("vitorias").value);
+    const derrotas = Number(DocumentTimeline.getElementById("derrotas").value);
+
+    const resultado = calcularRank(vitorias, derrotas);
+
+    document.getElementById("resultado").innerText = resultado;
+}
