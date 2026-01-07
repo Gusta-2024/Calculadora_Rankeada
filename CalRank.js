@@ -25,20 +25,16 @@ function mostrarRank() {
     const vitorias = Number(document.getElementById("vitorias").value);
     const derrotas = Number(document.getElementById("derrotas").value);
 
-    const resultadoTexto = calcularRank(vitorias, derrotas);
+    const { texto, nivel } = calcularRank(vitorias, derrotas);
 
     const resultado = document.getElementById("resultado");
     const rankBox = document.getElementById("rankBox");
 
-    resultado.innerText = resultadoTexto;
+    resultado.innerText = texto;
 
-    // Remove classes antigas
-    rankBox.className = "rank-box";
+    // Normaliza para classe CSS
+    const classeNivel = nivel.toLowerCase();
 
-    if (vitorias < 10) rankBox.classList.add("ferro");
-    else if (vitorias <= 20) rankBox.classList.add("prata");
-    else if (vitorias <= 50) rankBox.classList.add("ouro");
-    else if (vitorias <= 80) rankBox.classList.add("diamante");
-    else if (vitorias <= 100) rankBox.classList.add("lendario");
-    else rankBox.classList.add("imortal");
+    rankBox.className = `rank-box ${classeNivel}`;
 }
+
