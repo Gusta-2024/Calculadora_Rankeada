@@ -1,30 +1,42 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== FUNDO GERAL ===== */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+    background: radial-gradient(circle at top, #2a2a2a, #0f0f0f);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    color: #ffffff;
 }
 
+/* ===== CONTAINER PRINCIPAL ===== */
 .container {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.65);
     padding: 25px;
-    border-radius: 12px;
-    width: 320px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    width: 340px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
 
+/* ===== TÍTULO ===== */
 h1 {
     text-align: center;
     margin-bottom: 15px;
 }
 
+/* ===== FORMULÁRIO ===== */
 label {
-    margin-top: 10px;
     display: block;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 input {
@@ -33,47 +45,124 @@ input {
     margin-top: 5px;
     border-radius: 6px;
     border: none;
+    outline: none;
 }
 
+/* ===== BOTÃO ===== */
 button {
     width: 100%;
     margin-top: 15px;
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #2196f3;
+    background: linear-gradient(135deg, #2196f3, #1565c0);
     color: white;
     cursor: pointer;
     font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(33,150,243,0.6);
 }
 
-/* ===== RANK ===== */
-
+/* ===== CAIXA DO RANK ===== */
 .rank-box {
     margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.5s;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
+/* ===== MEDALHA ===== */
 .medalha {
-    font-size: 50px;
+    font-size: 56px;
     margin-bottom: 10px;
-    transition: 0.5s;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* ===== CORES POR RANK ===== */
-.ferro { background: linear-gradient(135deg, #616161, #9e9e9e); }
-.bronze { background: linear-gradient(135deg, #cd7f32, #8d5524); }
-.prata { background: linear-gradient(135deg, #cfd8dc, #90a4ae); }
-.ouro { background: linear-gradient(135deg, #ffca28, #ff8f00); }
-.diamante { background: linear-gradient(135deg, #4fc3f7, #0288d1); }
-.lendario { background: linear-gradient(135deg, #ab47bc, #6a1b9a); }
-.imortal { background: linear-gradient(135deg, #ff1744, #b71c1c); }
+.rank-box:hover .medalha {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* ===== TEXTO DO RESULTADO ===== */
+#resultado {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* =====================================================
+   ===== ESTILOS POR PATENTE (REGRA ANTIGA) =====
+   ===================================================== */
+
+/* FERRO */
+.ferro {
+    background: linear-gradient(135deg, #616161, #9e9e9e);
+    box-shadow: 0 0 15px rgba(160,160,160,0.6);
+}
+.ferro .medalha {
+    color: #b0b0b0;
+}
+
+/* BRONZE */
+.bronze {
+    background: linear-gradient(135deg, #cd7f32, #8d5524);
+    box-shadow: 0 0 18px rgba(205,127,50,0.6);
+}
+.bronze .medalha {
+    color: #cd7f32;
+}
+
+/* PRATA */
+.prata {
+    background: linear-gradient(135deg, #cfd8dc, #90a4ae);
+    box-shadow: 0 0 20px rgba(207,216,220,0.6);
+}
+.prata .medalha {
+    color: #e0e0e0;
+}
+
+/* OURO */
+.ouro {
+    background: linear-gradient(135deg, #ffca28, #ff8f00);
+    box-shadow: 0 0 25px rgba(255,202,40,0.8);
+}
+.ouro .medalha {
+    color: gold;
+    filter: drop-shadow(0 0 12px gold);
+}
+
+/* DIAMANTE */
+.diamante {
+    background: linear-gradient(135deg, #4fc3f7, #0288d1);
+    box-shadow: 0 0 28px rgba(79,195,247,0.9);
+}
+.diamante .medalha {
+    color: #b3e5fc;
+    filter: drop-shadow(0 0 14px #4fc3f7);
+}
+
+/* LENDÁRIO */
+.lendario {
+    background: linear-gradient(135deg, #ab47bc, #6a1b9a);
+    box-shadow: 0 0 32px rgba(171,71,188,0.9);
+}
+.lendario .medalha {
+    color: #e1bee7;
+    filter: drop-shadow(0 0 16px #ce93d8);
+}
+
+/* IMORTAL */
+.imortal {
+    background: linear-gradient(135deg, #ff1744, #b71c1c);
+    box-shadow: 0 0 36px rgba(255,23,68,1);
+}
+.imortal .medalha {
+    color: #ffebee;
+    filter: drop-shadow(0 0 20px #ff1744);
+}
 
 
